@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
+<title>Предложение за Габриела</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prata&family=Onest:wght@400;500;600&display=swap">
+<style>
+/* Layout: презентация, един слайд на екран. Вляво името и цената на варианта, вдясно какво включва в 3 групи. Отдолу лента с напредъка. */
+:root {
+  --paper: #eef0ec;
+  --card: #fbfcfa;
+  --ink: #1d2a24;
+  --soft: #66746c;
+  --faint: #a9b3ac;
+  --line: #d3d9d3;
+  --wine: #6d2332;
+  --sage: #dfe6df;
+  --display: "Prata", "Cormorant Garamond", Georgia, serif;
+  --body: "Onest", "Segoe UI", system-ui, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { background: var(--paper); color: var(--ink); font: 400 16px/1.55 var(--body); }
+.top { max-width: 1180px; margin: 0 auto; display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-block: 22px 0; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.brand { font-family: var(--display); font-size: 20px; }
+.meta { font-size: 12px; color: var(--soft); letter-spacing: .12em; text-transform: uppercase; }
+
+main { max-width: 1180px; margin: 0 auto; padding-block: 28px 130px; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.slide { animation: in .5s ease both; }
+@keyframes in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+.eyebrow { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--wine); }
+h1, h2, h3 { font-weight: 400; font-family: var(--display); margin: 0; text-wrap: balance; }
+
+/* Въведение */
+.intro { display: grid; gap: 24px; padding-top: 1vh; }
+.intro h1 { max-width: 22ch; }
+.intro h1 { font-size: clamp(34px, 4.4vw, 56px); line-height: 1.08; }
+.intro p { font-size: 19px; color: var(--soft); margin: 0; max-width: 56ch; }
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); padding-block: 18px; }
+.stats div { display: grid; gap: 4px; min-width: 0; }
+.stats b { font: 400 44px/1 var(--display); }
+.stats span { font-size: 14px; color: var(--soft); }
+.ladder { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; align-items: end; }
+.rung { font: inherit; color: inherit; text-align: left; background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 18px 20px; display: grid; gap: 6px; cursor: pointer; transition: border-color .2s, transform .2s; }
+.rung:nth-child(1) { min-height: 150px; } .rung:nth-child(2) { min-height: 185px; } .rung:nth-child(3) { min-height: 220px; }
+.rung:hover, .rung:focus-visible { border-color: var(--ink); transform: translateY(-3px); outline: none; }
+.rung b { font: 400 30px/1.1 var(--display); }
+.rung span { font-size: 14px; color: var(--soft); }
+.rung.r { background: var(--ink); color: var(--card); border-color: var(--ink); }
+.rung.r span { color: #c9d2cc; }
+.soft { color: var(--soft); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { border: 1px solid var(--line); background: var(--card); padding: 8px 14px; border-radius: 999px; font-size: 14px; }
+
+/* Слайд на вариант */
+.offer { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px; align-items: start; }
+.left { position: sticky; top: 24px; display: grid; gap: 18px; }
+.num { font: 400 15px var(--body); color: var(--soft); letter-spacing: .08em; }
+.num b { color: var(--ink); font-weight: 600; }
+.offer h2 { font-size: clamp(46px, 6vw, 78px); line-height: 1; }
+.promise { font-size: 20px; line-height: 1.4; margin: 0; max-width: 26ch; }
+.rec { justify-self: start; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; background: var(--ink); color: var(--card); padding: 5px 10px; border-radius: 2px; }
+
+.pricebox { margin-top: 10px; border-top: 1px solid var(--ink); padding-top: 18px; display: grid; gap: 8px; min-height: 170px; }
+.pricebox .row { display: flex; justify-content: space-between; gap: 12px; font-variant-numeric: tabular-nums; color: var(--soft); font-size: 15px; }
+.pricebox .row b { color: var(--ink); font-weight: 500; }
+.strike b { text-decoration: line-through; text-decoration-color: var(--wine); }
+.big { font: 400 64px/1 var(--display); margin-top: 6px; }
+.big small { font: 400 16px var(--body); color: var(--soft); margin-left: 8px; }
+.save { color: var(--wine); font-weight: 500; }
+.wait { color: var(--faint); font-size: 15px; }
+.reveal { animation: in .45s ease both; }
+
+.groups { display: grid; gap: 14px; }
+.group { background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 18px 20px; }
+.group h3 { font: 600 12px var(--body); letter-spacing: .16em; text-transform: uppercase; color: var(--soft); margin-bottom: 10px; display: flex; justify-content: space-between; }
+.group ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 24px; }
+.group li { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 6px 0; border-bottom: 1px dashed var(--line); font-size: 15px; min-width: 0; }
+.group li .n { display: flex; gap: 9px; align-items: baseline; min-width: 0; }
+.group li small { display: block; font-size: 12.5px; color: var(--soft); line-height: 1.35; margin-top: 2px; }
+.group li.old small { color: var(--faint); }
+.group li .n::before { content: ""; flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--ink); transform: translateY(-1px); }
+.group li.old { color: var(--faint); }
+.group li.old .n::before { background: transparent; border: 1px solid var(--faint); }
+.group li .v { font-variant-numeric: tabular-nums; color: var(--soft); font-size: 14px; white-space: nowrap; }
+.group li.old .v { color: var(--faint); }
+.legend { display: flex; gap: 22px; font-size: 13px; color: var(--soft); margin-top: 4px; }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.legend i { width: 7px; height: 7px; border-radius: 50%; background: var(--ink); }
+.legend i.o { background: transparent; border: 1px solid var(--faint); }
+.gifts { border: 1px solid var(--wine); background: transparent; }
+.gifts h3 { color: var(--wine); }
+.gifts li .n::before { background: var(--wine); }
+
+/* Избор */
+.choose h1 { font-size: clamp(34px, 4.6vw, 54px); margin: 10px 0 30px; }
+.cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: stretch; }
+.col { background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 26px 24px; display: grid; gap: 14px; align-content: start; cursor: pointer; transition: border-color .25s, transform .25s; }
+.col:hover, .col:focus-visible { border-color: var(--ink); outline: none; }
+.col.r { background: var(--ink); color: var(--card); border-color: var(--ink); }
+.col.r .soft, .col.r li { color: #c9d2cc; }
+.col h3 { font-size: 30px; }
+.col .p { font: 400 44px/1 var(--display); }
+.col .soft { color: var(--soft); font-size: 14px; }
+.col ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; font-size: 14px; color: var(--soft); }
+.col li::before { content: "— "; }
+.col .badge { justify-self: start; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; border: 1px solid currentColor; padding: 3px 9px; border-radius: 2px; }
+details { margin-top: 30px; }
+summary { cursor: pointer; font-weight: 500; padding: 10px 0; }
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); background: var(--card); border-radius: 4px; margin-top: 10px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 600px; }
+th, td { padding: 10px 14px; border-bottom: 1px solid var(--line); text-align: left; }
+th { font: 400 17px var(--display); }
+td.c, th.c { text-align: center; width: 16%; }
+td.off { color: var(--line); }
+.hl { background: var(--sage); }
+tr.g td { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--wine); background: var(--paper); }
+.terms { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px 30px; font-size: 14px; color: var(--soft); }
+.terms b { color: var(--ink); font-weight: 500; }
+
+/* Как започваме */
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 30px; }
+.step { border-top: 1px solid var(--ink); padding-top: 16px; }
+.step h3 { font-size: 24px; margin: 8px 0; }
+.step p { margin: 0; color: var(--soft); }
+.sig { margin-top: 56px; font-family: var(--display); font-size: 22px; }
+.sig small { display: block; font: 400 14px var(--body); color: var(--soft); }
+
+/* Лента отдолу */
+.bar { position: fixed; left: 0; right: 0; bottom: 0; background: var(--ink); color: var(--card); z-index: 20; padding-block: 12px calc(12px + env(safe-area-inset-bottom, 0px)); padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.bar .in { max-width: 1180px; margin: 0 auto; display: flex; align-items: center; gap: 20px; }
+.prog { flex: 1; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; min-width: 0; }
+.prog button { background: none; border: 0; color: var(--card); opacity: .45; font: 400 12px var(--body); text-align: left; padding: 6px 0 0; border-top: 2px solid rgba(251,252,250,.3); cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.prog button.done { opacity: .8; border-top-color: rgba(251,252,250,.7); }
+.prog button.on { opacity: 1; border-top-color: var(--card); }
+.nav { display: flex; gap: 8px; }
+.nav button { font: 500 15px var(--body); border-radius: 2px; padding: 11px 18px; cursor: pointer; }
+#back { background: transparent; color: var(--card); border: 1px solid rgba(251,252,250,.35); }
+#next { background: var(--card); color: var(--ink); border: 0; min-width: 190px; }
+.bar button:focus-visible { outline: 2px solid var(--card); outline-offset: 3px; }
+
+@media (max-width: 900px) {
+  .offer { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .left { position: static; }
+  .pricebox { min-height: 0; }
+  .group ul { grid-template-columns: minmax(0, 1fr); }
+  .cols, .steps, .ladder { grid-template-columns: minmax(0, 1fr); }
+  .rung { min-height: 0 !important; }
+  .stats b { font-size: 34px; }
+  .prog { display: none; }
+  .bar .in { justify-content: stretch; }
+  .nav { width: 100%; }
+  #next { flex: 1; min-width: 0; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="top"><div class="brand">Ergon</div><div class="meta">Предложение · ноември 2026</div></div>
+<main id="stage"></main>
+<div class="bar"><div class="in">
+  <div class="prog" id="prog"></div>
+  <div class="nav"><button id="back">Назад</button><button id="next">Напред</button></div>
+</div></div>
+
+<script>
+// Каталогът е същият като в старото предложение (ergon-oferti.html, v9). from = от кой вариант влиза (1 Старт, 2 Про, 3 Всичко).
+// Подаръците (Sales Master Doc, седмична среща, поддръжка) се показват отделно; срещата и поддръжката са на месец × prepaid (месеците не се показват на клиента).
+const ITEMS = [
+  { g: "Селс система", n: "Скрипт за сетинг", d: "първо обаждане, квалификация, записване на разговор", v: 300, from: 1 },
+  { g: "Селс система", n: "Скрипт за клоузинг", d: "откриване, болка, стойност, цена, затваряне", v: 500, from: 1 },
+  { g: "Селс система", n: "Наръчник за възражения", d: "„скъпо е“, „ще помисля“, „нямам време“ и още", v: 350, from: 1 },
+  { g: "Селс система", n: "Follow-up скриптове", d: "Viber, имейл и видео след разговор без решение", v: 250, from: 1 },
+  { g: "Селс система", n: "SOP-ове", d: "стъпка по стъпка: сетинг, клоузинг, плащания", v: 600, from: 1 },
+  { g: "Селс система", n: "KPI и отчети", d: "дневен отчет на всеки, седмична картина", v: 400, from: 1 },
+  { g: "Селс система", n: "Система за лидовете", d: "откъде идват, кой звъни, кога и какво се прави", v: 450, from: 2 },
+  { g: "Екип и обучение", n: "Обучение на сетъра и клоузъра", d: "4 седмици: ролеви игри, слушане, корекции", v: 1000, from: 2 },
+  { g: "Екип и обучение", n: "Наемане на клоузър", d: "обява, интервю, тестов разговор", v: 350, from: 2 },
+  { g: "Автоматизации", n: "Отговор на нов лид до минути", d: "лидът получава съобщение веднага", v: 290, from: 1 },
+  { g: "Автоматизации", n: "Напомняния за разговора", d: "24 ч и 1 ч преди, с линк за пренасрочване", v: 250, from: 1 },
+  { g: "Автоматизации", n: "Автоматичен follow-up", d: "към хората, които казаха „ще помисля“", v: 250, from: 2 },
+  { g: "Автоматизации", n: "Табло с KPI", d: "всички числа на едно място", v: 390, from: 2 },
+  { g: "Автоматизации", n: "CRM за лидовете", d: "всеки лид, на кой етап е и какво следва", v: 390, from: 2 },
+  { g: "Автоматизации", n: "Реактивиране на старите лидове", d: "кампания към хората, с които никой не е говорил", v: 290, from: 2 },
+  { g: "Автоматизации", n: "Напомняне за вноски", d: "и известие при неуспешно плащане", v: 250, from: 2 },
+  { g: "Автоматизации", n: "Onboarding на новите клиенти", d: "добре дошли, достъп, анкета след плащане", v: 290, from: 3 },
+  { g: "Автоматизации", n: "Комисионни на екипа", d: "сметки за сетъра и клоузъра, вкл. вноски", v: 290, from: 3 },
+];
+const GIFTS = [
+  { n: "Sales Master Doc", d: "всичко в един наръчник за всеки нов човек", v: () => 250 },
+  { n: "Седмична среща с екипа", d: "числата, какво работи, какво сменяме", v: (o) => 200 * o.prepaid },
+  { n: "Поддръжка на автоматизациите", d: "оправяме всеки проблем", v: (o) => 149 * o.prepaid },
+];
+const OFFERS = [
+  { id: 1, name: "Старт", price: 790, prepaid: 1, promise: "Основата на селса: скриптове, SOP-ове, KPI и първите автоматизации.",
+    key: ["Скриптове за сетинг и клоузинг", "SOP-ове, KPI и отчети", "Отговор на лид до минути"] },
+  { id: 2, name: "Про", price: 1390, prepaid: 3, rec: true, promise: "Намираме и обучаваме клоузър, а екипът получава система за лидовете и CRM.",
+    key: ["Наемане и обучение на клоузър", "Система за лидовете и CRM", "Табло с KPI и стари лидове"] },
+  { id: 3, name: "Всичко", price: 1990, prepaid: 6, promise: "Абсолютно всичко, с най-дългата поддръжка.",
+    key: ["Целият каталог", "Onboarding и комисионни", "Най-дългата поддръжка"] },
+];
+const GROUPS = ["Селс система", "Екип и обучение", "Автоматизации"];
+
+const eur = (n) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " €";
+const sum = (a) => a.reduce((s, x) => s + x.v, 0);
+const giftsOf = (o) => GIFTS.reduce((t, g) => t + g.v(o), 0);
+const valueOf = (o) => sum(ITEMS.filter((i) => i.from <= o.id)) + giftsOf(o);
+
+// Слайдове: въведение, 3 варианта (всеки на 3 стъпки), избор, как започваме.
+const SLIDES = [{ k: "intro", label: "Начало" }, ...OFFERS.map((o) => ({ k: "offer", o, label: o.name })), { k: "choose", label: "Избор" }, { k: "start", label: "Как започваме" }];
+let si = 0, sub = 1;
+
+function intro() {
+  return `<section class="slide intro">
+    <div class="eyebrow">Ergon · за Габриела Великова</div>
+    <h1>Селс система, която продава и когато не си на телефона</h1>
+    <div class="stats">
+      <div><b>${ITEMS.length + GIFTS.length}</b><span>неща, които изграждаме</span></div>
+      <div><b>4</b><span>части: селс система, екип, автоматизации, поддръжка</span></div>
+      <div><b>3</b><span>варианта, избираш един</span></div>
+    </div>
+    <div class="ladder">${OFFERS.map((o) => `<button class="rung ${o.rec ? "r" : ""}" data-go="${o.id}"><span class="soft">Вариант ${o.id}</span><b>${o.name}</b><span>${o.promise}</span></button>`).join("")}</div>
+  </section>`;
+}
+
+function offer(o) {
+  const li = (i) => `<li class="${i.from < o.id ? "old" : ""}"><span class="n"><span>${i.n}<small>${i.d}</small></span></span>${sub >= 2 ? `<span class="v reveal">${eur(i.v)}</span>` : ""}</li>`;
+  const groups = GROUPS.map((g) => {
+    const list = ITEMS.filter((i) => i.g === g && i.from <= o.id);
+    return `<div class="group"><h3><span>${g}</span><span>${list.length}</span></h3><ul>${list.map(li).join("")}</ul></div>`;
+  }).join("");
+  
+  let price = `<div class="wait">Стойността и цената са на следващите стъпки.</div>`;
+  if (sub >= 2) price = `<div class="row reveal strike"><span>Ако го поръчаш поотделно</span><b>${eur(valueOf(o))}</b></div>
+    <div class="row reveal"><span>От тях подаръци</span><b>${eur(giftsOf(o))}</b></div>` + (sub < 3 ? `<div class="wait">Цената е на следващата стъпка.</div>` : "");
+  if (sub >= 3) price += `<div class="big reveal">${eur(o.price)}<small>веднъж</small></div>
+    <div class="row reveal"><span>или 2 вноски по</span><b>${eur(o.price / 2)}</b></div>
+    <div class="save reveal">Спестяваш ${eur(valueOf(o) - o.price)}</div>`;
+  return `<section class="slide offer">
+    <div class="left">
+      <div class="num">Вариант <b>${o.id}</b> от 3</div>
+      ${o.rec ? `<span class="rec">Препоръчваме</span>` : ""}
+      <h2>${o.name}</h2>
+      <p class="promise">${o.promise}</p>
+      <div class="pricebox">${price}</div>
+    </div>
+    <div class="groups">
+      ${o.id > 1 ? `<div class="legend"><span><i></i>ново в „${o.name}“</span><span><i class="o"></i>от предишния вариант</span></div>` : ""}
+      ${groups}
+      <div class="group gifts"><h3><span>Подарък от нас</span></h3><ul>${GIFTS.map((g) => `<li><span class="n"><span>${g.n}<small>${g.d}</small></span></span>${sub >= 2 ? `<span class="v reveal"><s>${eur(g.v(o))}</s></span>` : ""}</li>`).join("")}</ul></div>
+    </div>
+  </section>`;
+}
+
+function choose() {
+  const cells = (from) => OFFERS.map((o) => `<td class="c ${from <= o.id ? "" : "off"} ${o.rec ? "hl" : ""}">${from <= o.id ? "✓" : "—"}</td>`).join("");
+  return `<section class="slide choose">
+    <div class="eyebrow">Твоят избор</div>
+    <h1>Кой вариант ти звучи най-близо?</h1>
+    <div class="cols">${OFFERS.map((o, i) => `<div class="col ${o.rec ? "r" : ""}" tabindex="0" data-go="${i + 1}">
+      ${o.rec ? `<span class="badge">Препоръчваме</span>` : `<span class="soft">Вариант ${o.id}</span>`}
+      <h3>${o.name}</h3>
+      <div class="p">${eur(o.price)}</div>
+      <div class="soft">или 2 × ${eur(o.price / 2)}</div>
+      <ul>${o.key.map((k) => `<li>${k}</li>`).join("")}</ul>
+    </div>`).join("")}</div>
+    <div class="terms"><span><b>2 вноски:</b> половината при старт, половината след 30 дни</span><span><b>След включената поддръжка:</b> 149 € на месец, само ако искаш</span></div>
+    <details><summary>Виж всичко едно до друго</summary><div class="table-wrap"><table>
+      <thead><tr><th>Какво включва</th>${OFFERS.map((o) => `<th class="c ${o.rec ? "hl" : ""}">${o.name}</th>`).join("")}</tr></thead><tbody>
+      ${GROUPS.map((g) => `<tr class="g"><td colspan="4">${g}</td></tr>` + ITEMS.filter((i) => i.g === g).map((i) => `<tr><td>${i.n}</td>${cells(i.from)}</tr>`).join("")).join("")}
+      <tr class="g"><td colspan="4">Подарък от нас</td></tr>${GIFTS.map((g) => `<tr><td>${g.n}</td>${cells(1)}</tr>`).join("")}
+      <tr><td><b>Цена</b></td>${OFFERS.map((o) => `<td class="c ${o.rec ? "hl" : ""}"><b>${eur(o.price)}</b></td>`).join("")}</tr>
+    </tbody></table></div></details>
+  </section>`;
+}
+
+function start() {
+  return `<section class="slide">
+    <div class="eyebrow">След като избереш</div>
+    <h1 style="font-size:clamp(34px,4.6vw,54px);margin-top:10px">Как започваме</h1>
+    <div class="steps">
+      <div class="step"><div class="eyebrow">Седмица 1</div><h3>Опознаваме бизнеса</h3><p>Една среща: продукт, цена, откъде идват хората. Скриптовете са с твоите думи.</p></div>
+      <div class="step"><div class="eyebrow">Седмици 2–4</div><h3>Изграждаме</h3><p>Ти одобряваш всяко нещо, преди да тръгне към клиентите.</p></div>
+      <div class="step"><div class="eyebrow">След това</div><h3>Следим числата</h3><p>Виждаш кой е писал, кой е записан и кой е купил. Оправяме всичко, което спре.</p></div>
+    </div>
+    <div class="sig">Стоян Маркачев<small>Sales Manager · Ergon · предложението важи 14 дни</small></div>
+  </section>`;
+}
+
+function nextLabel() {
+  const s = SLIDES[si];
+  if (s.k === "intro") return "Виж вариантите";
+  if (s.k === "offer") return sub === 1 ? "Покажи стойността" : sub === 2 ? "Покажи цената" : s.o.id < 3 ? "Следващ вариант" : "Сравни трите";
+  if (s.k === "choose") return "Как започваме";
+  return "Към началото";
+}
+
+function render(scroll = true) {
+  const s = SLIDES[si];
+  document.getElementById("stage").innerHTML = s.k === "intro" ? intro() : s.k === "offer" ? offer(s.o) : s.k === "choose" ? choose() : start();
+  document.getElementById("prog").innerHTML = SLIDES.map((x, i) => `<button class="${i === si ? "on" : i < si ? "done" : ""}" data-i="${i}">${x.label}</button>`).join("");
+  document.getElementById("next").textContent = nextLabel();
+  document.getElementById("back").disabled = si === 0 && sub === 1;
+  document.querySelectorAll("[data-go]").forEach((el) => { el.onclick = el.onkeydown = (e) => { if (e.type === "keydown" && e.key !== "Enter") return; go(+el.dataset.go, el.classList.contains("rung") ? 1 : 3); }; });
+  if (scroll) window.scrollTo({ top: 0, behavior: "smooth" });
+}
+function go(i, s = 1) { si = Math.max(0, Math.min(SLIDES.length - 1, i)); sub = s; render(); }
+function next() {
+  if (SLIDES[si].k === "offer" && sub < 3) { sub++; render(window.innerWidth < 900 ? false : true); return; }
+  si === SLIDES.length - 1 ? go(0) : go(si + 1);
+}
+function back() {
+  if (SLIDES[si].k === "offer" && sub > 1) { sub--; render(false); return; }
+  if (si > 0) { const p = SLIDES[si - 1]; go(si - 1, p.k === "offer" ? 3 : 1); }
+}
+document.getElementById("next").onclick = next;
+document.getElementById("back").onclick = back;
+document.getElementById("prog").onclick = (e) => { const b = e.target.closest("button"); if (b) go(+b.dataset.i); };
+document.addEventListener("keydown", (e) => { if (e.target.closest("details, summary")) return; if (e.key === "ArrowRight") next(); if (e.key === "ArrowLeft") back(); });
+render(false);
+</script>
+
+</html>
