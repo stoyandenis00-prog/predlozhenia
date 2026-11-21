@@ -50,7 +50,7 @@ em { font-style: italic; color: var(--sage); }
 .cover .meta b { color: var(--ivory); font-weight: 500; display: block; font-size: 17px; }
 
 /* Системата */
-.sys h2 { font-size: clamp(38px, 5vw, 64px); line-height: 1.05; margin: 14px 0 44px; max-width: 18ch; }
+.sys h2 { font-size: clamp(38px, 5vw, 64px); line-height: 1.05; margin: 14px 0 44px; max-width: 24ch; }
 .flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--line); }
 .stage { padding: 22px 22px 8px 0; border-right: 1px solid var(--line); min-width: 0; position: relative; }
 .stage + .stage { padding-left: 22px; }
@@ -65,17 +65,17 @@ em { font-style: italic; color: var(--sage); }
 
 /* Вариант */
 .offer { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 64px; align-items: center; }
-.numeral { font: 300 clamp(120px, 16vw, 220px)/.8 var(--serif); font-style: italic; color: var(--mute); margin-bottom: -10px; }
+.numeral { font: 300 clamp(90px, 11vw, 150px)/.8 var(--serif); font-style: italic; color: var(--mute); margin-bottom: -10px; }
 .offer h2 { font-size: clamp(56px, 7vw, 96px); line-height: .95; }
 .rec { display: inline-block; margin-left: 14px; vertical-align: middle; font: 600 11px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--bg); background: var(--sage); padding: 5px 10px; border-radius: 2px; }
-.promise { font: 300 24px/1.35 var(--serif); font-style: italic; color: var(--ivory); margin: 18px 0 30px; max-width: 24ch; }
+.promise { font: 300 24px/1.35 var(--serif); font-style: italic; color: var(--ivory); margin: 14px 0 22px; max-width: 24ch; }
 .price { border-top: 1px solid var(--line); padding-top: 20px; min-height: 190px; display: grid; gap: 8px; align-content: start; }
 .price .row { display: flex; justify-content: space-between; gap: 16px; font-size: 15px; color: var(--dim); font-variant-numeric: tabular-nums; }
 .price .row b { color: var(--ivory); font-weight: 500; }
 .was b { position: relative; }
 .was b::after { content: ""; position: absolute; left: -2px; right: -2px; top: 52%; height: 1.5px; background: var(--wine); transform-origin: left; animation: strike .6s .35s ease both; }
 @keyframes strike { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-.amount { font: 300 clamp(72px, 8vw, 110px)/1 var(--serif); margin-top: 6px; font-variant-numeric: lining-nums; }
+.amount { font: 300 clamp(64px, 7vw, 96px)/1 var(--serif); margin-top: 6px; font-variant-numeric: lining-nums; }
 .amount small { font: 400 15px var(--sans); color: var(--dim); margin-left: 10px; }
 .save { color: var(--wine); font-weight: 600; font-size: 15px; letter-spacing: .02em; }
 .hint { color: var(--mute); font-size: 14px; }
