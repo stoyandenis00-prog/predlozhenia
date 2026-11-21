@@ -8,28 +8,28 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Onest:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Golos+Text:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: кратко начало → 3 оферти (избор горе, отдолу всичко ред по ред с цена и обща сума) → сравнение → пълен каталог */
+/* Layout (v6): тъмнозелена лента горе, оферти като „папки“ с тъмна корица, серифни цифри; кратко начало → 3 оферти (избор горе, отдолу всичко ред по ред с цена и обща сума) → сравнение → пълен каталог */
 :root{
-  --bg:#F5F7F4; --surface:#FFFFFF; --ink:#15211B; --muted:#5A6A61; --line:#DCE3DD;
-  --accent:#6E4FE8; --accent-ink:#FFFFFF; --accent-soft:#EEEAFD;
-  --green:#2F7A55; --green-soft:#E3F1E9; --save:#8FE0B0; --gold:#F2C66B; --gold-ink:#8A5A00; --gold-soft:#FBF1DC;
+  --bg:#EDF0EC; --surface:#FFFFFF; --ink:#14201A; --muted:#58675F; --line:#D6DDD7;
+  --accent:#1F4D3A; --accent-ink:#F3F5F1; --accent-soft:#E0EBE4; --wine:#7A2738; --wine-soft:#F4E6E9; --deep:#132A20;
+  --green:#7A2738; --green-soft:#F4E6E9; --save:#E7A9B6; --gold:#F2C66B; --gold-ink:#8A5A00; --gold-soft:#FBF1DC;
   --lux-ink:#EEF2EE; --lux-muted:rgba(238,242,238,.62); --lux-gold:#A9C9B4; --lux-line:rgba(169,201,180,.25);
   --shadow:0 1px 2px rgba(21,33,27,.05),0 8px 28px rgba(21,33,27,.06);
-  --f-display:"Unbounded","Onest",system-ui,sans-serif;
-  --f-body:"Onest",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --r:14px;
+  --f-display:"Playfair Display",Georgia,serif;
+  --f-body:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --r:6px;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#0F1412; --surface:#171E1B; --ink:#E8EEEA; --muted:#9AA9A1; --line:#2A3430;
-  --accent:#9B85FF; --accent-ink:#120D24; --accent-soft:#251E44;
-  --green:#6FCB97; --green-soft:#16291F; --save:#1F6B45; --gold:#8A5A00; --gold-ink:#F2C66B; --gold-soft:#2C2412;
+  --accent:#8CC4A6; --accent-ink:#0F1B15; --accent-soft:#1B2E25; --wine:#E39AAB; --wine-soft:#2E1A1F; --deep:#0B1611;
+  --green:#E39AAB; --green-soft:#2E1A1F; --save:#E7A9B6; --gold:#8A5A00; --gold-ink:#F2C66B; --gold-soft:#2C2412;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.35); color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0F1412; --surface:#171E1B; --ink:#E8EEEA; --muted:#9AA9A1; --line:#2A3430;
-  --accent:#9B85FF; --accent-ink:#120D24; --accent-soft:#251E44;
-  --green:#6FCB97; --green-soft:#16291F; --save:#1F6B45; --gold:#8A5A00; --gold-ink:#F2C66B; --gold-soft:#2C2412;
+  --accent:#8CC4A6; --accent-ink:#0F1B15; --accent-soft:#1B2E25; --wine:#E39AAB; --wine-soft:#2E1A1F; --deep:#0B1611;
+  --green:#E39AAB; --green-soft:#2E1A1F; --save:#E7A9B6; --gold:#8A5A00; --gold-ink:#F2C66B; --gold-soft:#2C2412;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(0,0,0,.35); color-scheme:dark}
 
 *{box-sizing:border-box}
@@ -176,6 +176,51 @@ tr:last-child td{border-bottom:0}
 .steps3{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .steps3 div{display:flex;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 16px 8px 8px;font-size:.92rem}
 .steps3 b{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:var(--accent-ink);font-family:var(--f-display);font-size:.78rem}
+
+/* ── v6: по-разчупен вид ── */
+h1,h2,h3{letter-spacing:0}
+.brand i{background:var(--deep);border-radius:50%;font-family:var(--f-display);font-style:italic;color:#F3F5F1}
+.hero{background:var(--deep);color:#F3F5F1;padding-block:72px 64px;position:relative;overflow:hidden}
+.hero::after{content:"E";position:absolute;right:-2vw;bottom:-14vw;font:italic 600 46vw/1 var(--f-display);color:rgba(255,255,255,.04);pointer-events:none}
+.hero .eyebrow{color:#9FC7B1}
+.hero h1{font-size:clamp(2.2rem,5.6vw,4rem);line-height:1.04;max-width:18ch}
+.hero h1 em{font-style:italic;color:#9FC7B1}
+.hero .lead{color:rgba(243,245,241,.75)}
+.steps3 div{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#F3F5F1}
+.steps3 b{background:#F3F5F1;color:var(--deep);font-family:var(--f-display);font-style:italic;font-size:.9rem}
+.eyebrow{color:var(--wine)}
+.sheet{border-radius:var(--r);box-shadow:0 30px 60px -40px rgba(19,42,32,.55)}
+.sheet-head{background:var(--deep);color:#F3F5F1;border-bottom:0;padding:30px 28px 26px;position:relative;overflow:hidden}
+.sheet-head .eyebrow{color:#9FC7B1}
+.sheet-head h2{font-size:clamp(2rem,4.6vw,3rem)}
+.sheet-head p{color:rgba(243,245,241,.72)}
+.sheet-head::after{content:attr(data-n);position:absolute;right:22px;top:-18px;font:italic 600 9rem/1 var(--f-display);color:rgba(255,255,255,.06);pointer-events:none}
+.term{background:rgba(255,255,255,.1);color:#F3F5F1}
+.recb{background:#F3F5F1;color:var(--deep)}
+.it .no{font-family:var(--f-display);font-style:italic;font-size:1rem;color:var(--wine)}
+.it .tag{color:var(--wine);background:var(--wine-soft)}
+.it.new td:first-child{box-shadow:inset 3px 0 0 var(--wine)}
+.price td{background:var(--accent-soft);color:var(--accent)}
+.reveal{background:var(--deep);border-radius:var(--r)}
+.reveal strong{font-size:clamp(2.6rem,6vw,3.6rem)}
+.reveal.rec{box-shadow:0 0 0 3px var(--wine)}
+.cta{border-radius:999px;background:var(--deep);color:#F3F5F1;letter-spacing:.02em}
+.cta.light{background:#F3F5F1;color:var(--deep)}
+.dot{border-radius:999px}
+.dot.on{background:var(--deep);border-color:var(--deep);color:#F3F5F1}
+.pick{border-radius:var(--r)}
+.pick .p{font-size:1.7rem}
+.pick.rec{border:0;background:var(--deep);color:#F3F5F1;box-shadow:0 30px 50px -30px rgba(19,42,32,.7)}
+.pick.rec .p,.pick.rec .why{color:#F3F5F1}
+.pick.rec .k,.pick.rec .was,.pick.rec .p small{color:rgba(243,245,241,.7)}
+.pick.rec .gifts{color:#9FC7B1}
+.pick.rec .why{border-color:rgba(255,255,255,.15)}
+.pick .badge{background:var(--wine);color:#F3F5F1}
+.cmp .rec{background:var(--accent-soft)}
+.cmp td.y{color:var(--accent)}
+section+section{border-top:0}
+#izbor{background:var(--surface)}
+#katalog{background:var(--surface)}
 footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
@@ -195,7 +240,7 @@ footer{padding-block:28px 40px;color:var(--muted);font-size:.85rem}
 <header class="hero" id="start">
   <div class="wrap">
     <p class="eyebrow">Предложение · селс и автоматизации</p>
-    <h1 style="margin-top:14px">Всичко, от което продажбите ви имат нужда, <em>на едно място</em></h1>
+    <h1 style="margin-top:14px">Всичко, от което продажбите ви имат нужда. <em>На едно място.</em></h1>
     <p class="lead">Скриптове, SOP-ове, KPI, система за лидовете, обучение на екипа и автоматизации. Подредили сме го в три оферти. Ще ви ги покажа една по една.</p>
     <div class="steps3"><div><b>1</b>Какво включва</div><div><b>2</b>Каква е стойността</div><div><b>3</b>Цената</div></div>
   </div>
@@ -341,7 +386,7 @@ function renderStage(){
       <button class="cta light" type="button" data-act="next">${cur<OFFERS.length-1?"Следваща оферта →":"Към избора →"}</button>
     </div>`;
   document.getElementById("stage").innerHTML=`
-    <div class="sheet-head"><div><p class="eyebrow">Оферта ${cur+1} от ${OFFERS.length} · ${o.items.length+o.mitems.length} неща</p><h2 style="margin-top:6px">${o.name}${o.rec?' <span class="recb">Препоръчваме</span>':""}</h2><p>${o.intro}</p></div><span class="term">${o.term}</span></div>
+    <div class="sheet-head" data-n="0${cur+1}"><div><p class="eyebrow">Оферта ${cur+1} от ${OFFERS.length} · ${o.items.length+o.mitems.length} неща</p><h2 style="margin-top:6px">${o.name}${o.rec?' <span class="recb">Препоръчваме</span>':""}</h2><p>${o.intro}</p></div><span class="term">${o.term}</span></div>
     <div class="tbl"><table><thead><tr><th>Какво правим</th><th class="num">${show?"Стойност":""}</th></tr></thead><tbody>${rows}</tbody></table></div>
     <div class="stage-foot">${cur>0||step>0?'<button class="ghost" type="button" data-act="back">← Назад</button>':"<span></span>"}${foot}</div>`;
   document.getElementById("dots").innerHTML=OFFERS.map((x,i)=>`<button type="button" class="dot${i===cur?" on":""}${i<cur||done?" seen":""}" data-go="${i}" ${i>cur&&!done?"disabled":""}>${x.name}</button>`).join("");
