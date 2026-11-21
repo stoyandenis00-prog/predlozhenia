@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
+<title>Предложение за Габриела</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&family=Manrope:wght@400;500;600&display=swap">
+<style>
+/* Layout: презентация на цял екран, тъмно бутилково зелено. Един слайд = една мисъл. Отгоре тънка линия за напредъка, отдолу стрелки. */
+:root {
+  --bg: #0e1814;
+  --bg2: #142420;
+  --ivory: #efece3;
+  --dim: #7f938a;
+  --mute: #3a4d46;
+  --line: #24372f;
+  --sage: #a9c1b1;
+  --wine: #b0485e;
+  --serif: "Cormorant Garamond", "Prata", Georgia, serif;
+  --sans: "Manrope", "Segoe UI", system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { background: radial-gradient(120% 90% at 85% 0%, var(--bg2) 0%, var(--bg) 60%); background-attachment: fixed; color: var(--ivory); font: 400 16px/1.55 var(--sans); overflow-x: hidden; }
+.prog { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; height: 2px; background: var(--sage); transition: width .5s ease; z-index: 30; }
+.head { position: fixed; top: 0; left: 0; right: 0; z-index: 20; display: flex; justify-content: space-between; align-items: center; padding-block: calc(18px + env(safe-area-inset-top, 0px)) 0; padding-left: max(28px, env(safe-area-inset-left, 0px)); padding-right: max(28px, env(safe-area-inset-right, 0px)); font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--dim); pointer-events: none; }
+.head b { color: var(--ivory); font-weight: 600; letter-spacing: .3em; }
+
+main { min-height: 100%; display: grid; }
+.slide { min-height: 100vh; min-height: 100dvh; display: grid; align-content: center; padding-block: 90px 120px; padding-left: max(28px, env(safe-area-inset-left, 0px)); padding-right: max(28px, env(safe-area-inset-right, 0px)); max-width: 1240px; width: 100%; margin: 0 auto; animation: enter .7s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes enter { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.up { animation: enter .7s cubic-bezier(.2,.7,.2,1) both; }
+.d1 { animation-delay: .08s } .d2 { animation-delay: .16s } .d3 { animation-delay: .24s } .d4 { animation-delay: .32s } .d5 { animation-delay: .4s }
+
+.kicker { font-size: 12px; letter-spacing: .24em; text-transform: uppercase; color: var(--sage); }
+h1, h2, h3 { font-family: var(--serif); font-weight: 300; margin: 0; text-wrap: balance; }
+em { font-style: italic; color: var(--sage); }
+
+/* Корица */
+.cover h1 { font-size: clamp(64px, 13vw, 190px); line-height: .9; letter-spacing: -.02em; margin: 26px 0 30px; }
+.cover h1 em { display: block; }
+.cover .rule { height: 1px; background: var(--line); margin: 6px 0 24px; }
+.cover .meta { display: flex; flex-wrap: wrap; gap: 14px 48px; color: var(--dim); font-size: 15px; }
+.cover .meta b { color: var(--ivory); font-weight: 500; display: block; font-size: 17px; }
+
+/* Системата */
+.sys h2 { font-size: clamp(38px, 5vw, 64px); line-height: 1.05; margin: 14px 0 44px; max-width: 18ch; }
+.flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--line); }
+.stage { padding: 22px 22px 8px 0; border-right: 1px solid var(--line); min-width: 0; position: relative; }
+.stage + .stage { padding-left: 22px; }
+.stage:last-child { border-right: 0; }
+.stage::before { content: ""; position: absolute; top: -5px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--sage); }
+.stage + .stage::before { left: 22px; }
+.stage .n { font: 300 15px var(--serif); font-style: italic; color: var(--dim); }
+.stage h3 { font-size: 30px; line-height: 1.1; margin: 4px 0 14px; }
+.stage ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; font-size: 14.5px; color: var(--dim); }
+.base { margin-top: 30px; padding: 18px 22px; border: 1px solid var(--line); border-radius: 2px; display: flex; flex-wrap: wrap; gap: 8px 26px; align-items: baseline; font-size: 14.5px; color: var(--dim); }
+.base b { color: var(--ivory); font-weight: 500; }
+
+/* Вариант */
+.offer { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 64px; align-items: center; }
+.numeral { font: 300 clamp(120px, 16vw, 220px)/.8 var(--serif); font-style: italic; color: var(--mute); margin-bottom: -10px; }
+.offer h2 { font-size: clamp(56px, 7vw, 96px); line-height: .95; }
+.rec { display: inline-block; margin-left: 14px; vertical-align: middle; font: 600 11px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--bg); background: var(--sage); padding: 5px 10px; border-radius: 2px; }
+.promise { font: 300 24px/1.35 var(--serif); font-style: italic; color: var(--ivory); margin: 18px 0 30px; max-width: 24ch; }
+.price { border-top: 1px solid var(--line); padding-top: 20px; min-height: 190px; display: grid; gap: 8px; align-content: start; }
+.price .row { display: flex; justify-content: space-between; gap: 16px; font-size: 15px; color: var(--dim); font-variant-numeric: tabular-nums; }
+.price .row b { color: var(--ivory); font-weight: 500; }
+.was b { position: relative; }
+.was b::after { content: ""; position: absolute; left: -2px; right: -2px; top: 52%; height: 1.5px; background: var(--wine); transform-origin: left; animation: strike .6s .35s ease both; }
+@keyframes strike { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.amount { font: 300 clamp(72px, 8vw, 110px)/1 var(--serif); margin-top: 6px; font-variant-numeric: lining-nums; }
+.amount small { font: 400 15px var(--sans); color: var(--dim); margin-left: 10px; }
+.save { color: var(--wine); font-weight: 600; font-size: 15px; letter-spacing: .02em; }
+.hint { color: var(--mute); font-size: 14px; }
+
+.index { display: grid; gap: 26px; }
+.grp h4 { margin: 0 0 6px; font: 600 11px var(--sans); letter-spacing: .22em; text-transform: uppercase; color: var(--dim); display: flex; justify-content: space-between; }
+.grp ul { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 34px; }
+.grp li { break-inside: avoid; display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+.grp li .t { display: flex; gap: 10px; }
+.grp li .t::before { content: "+"; color: var(--sage); font-weight: 600; width: 10px; flex: none; }
+.grp li.old { color: var(--mute); }
+.grp li.old .t::before { content: "✓"; color: var(--mute); font-weight: 400; }
+.grp li .v { color: var(--dim); font-variant-numeric: tabular-nums; white-space: nowrap; font-size: 14px; }
+.grp li.old .v { color: var(--mute); }
+.grp.gift h4 { color: var(--wine); }
+.grp.gift li .t::before { content: "◆"; color: var(--wine); font-size: 10px; line-height: 2.1; }
+.grp.gift li .v { text-decoration: line-through; text-decoration-color: var(--wine); }
+
+/* Избор */
+.choose h2 { font-size: clamp(40px, 5vw, 66px); margin: 14px 0 40px; }
+.cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; align-items: end; }
+.card { font: inherit; color: inherit; text-align: left; background: transparent; border: 1px solid var(--line); border-radius: 2px; padding: 28px 26px; display: grid; gap: 12px; cursor: pointer; transition: border-color .3s, transform .3s, background .3s; }
+.card:hover, .card:focus-visible { border-color: var(--sage); transform: translateY(-4px); outline: none; }
+.card.r { background: var(--ivory); color: var(--bg); border-color: var(--ivory); padding-block: 44px; }
+.card.r .s, .card.r li { color: #4c5f57; }
+.card .s { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--dim); }
+.card h3 { font-size: 40px; line-height: 1; }
+.card .p { font: 300 54px/1 var(--serif); }
+.card ul { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 6px; font-size: 14px; color: var(--dim); }
+.terms { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 10px 40px; font-size: 14px; color: var(--dim); }
+.terms b { color: var(--ivory); font-weight: 500; }
+
+/* Старт */
+.start h2 { font-size: clamp(40px, 5vw, 66px); margin: 14px 0 44px; }
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+.step { border-top: 1px solid var(--line); padding-top: 18px; }
+.step .w { font: 300 18px var(--serif); font-style: italic; color: var(--sage); }
+.step h3 { font-size: 32px; margin: 6px 0 10px; }
+.step p { margin: 0; color: var(--dim); }
+.sign { margin-top: 70px; display: flex; justify-content: space-between; align-items: end; gap: 20px; flex-wrap: wrap; }
+.sign .nm { font: 300 38px/1 var(--serif); font-style: italic; }
+.sign .r { color: var(--dim); font-size: 14px; text-align: right; }
+
+/* Управление */
+.ctl { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 16px calc(18px + env(safe-area-inset-bottom, 0px)); padding-left: max(28px, env(safe-area-inset-left, 0px)); padding-right: max(28px, env(safe-area-inset-right, 0px)); background: linear-gradient(to top, var(--bg) 55%, transparent); }
+.count { font: 300 18px var(--serif); font-style: italic; color: var(--dim); font-variant-numeric: lining-nums; }
+.count b { color: var(--ivory); font-weight: 500; font-style: normal; }
+.btns { display: flex; gap: 10px; align-items: center; }
+.ctl button { font: 500 14px var(--sans); cursor: pointer; border-radius: 999px; transition: background .2s, color .2s; }
+#back { width: 46px; height: 46px; background: transparent; color: var(--ivory); border: 1px solid var(--line); font-size: 18px; }
+#back:disabled { opacity: .3; cursor: default; }
+#next { height: 46px; padding: 0 24px; background: var(--ivory); color: var(--bg); border: 0; letter-spacing: .02em; }
+#next:hover { background: var(--sage); }
+.ctl button:focus-visible { outline: 2px solid var(--sage); outline-offset: 3px; }
+
+@media (max-width: 920px) {
+  .slide { align-content: start; padding-top: 74px; }
+  .offer { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+  .numeral { font-size: 96px; }
+  .price { min-height: 0; }
+  .grp ul { columns: 1; }
+  .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stage:nth-child(2) { border-right: 0; }
+  .stage:nth-child(3) { padding-left: 0; } .stage:nth-child(3)::before { left: 0; }
+  .stage:nth-child(n+3) { border-top: 1px solid var(--line); margin-top: 18px; }
+  .cards, .steps { grid-template-columns: minmax(0, 1fr); }
+  .card.r { padding-block: 30px; }
+  .count { display: none; }
+  .btns { width: 100%; } #next { flex: 1; }
+}
+@media (max-width: 520px) { .flow { grid-template-columns: minmax(0, 1fr); } .stage { border-right: 0; padding-left: 0 !important; } .stage::before { left: 0 !important; } .stage + .stage { border-top: 1px solid var(--line); margin-top: 14px; } }
+@media (prefers-reduced-motion: reduce) { *, *::after { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="prog" id="prog"></div>
+<div class="head"><b>Ergon</b><span>Ноември 2026</span></div>
+<main id="stage"></main>
+<div class="ctl">
+  <div class="count" id="count"></div>
+  <div class="btns"><button id="back" aria-label="Назад">←</button><button id="next">Напред</button></div>
+</div>
+
+<script>
+// Съдържанието е като в старото предложение (ergon-oferti.html, v9). from: 1 Старт, 2 Про, 3 Всичко.
+const ITEMS = [
+  { g: "Селс система", n: "Скрипт за сетинг", v: 300, from: 1 },
+  { g: "Селс система", n: "Скрипт за клоузинг", v: 500, from: 1 },
+  { g: "Селс система", n: "Наръчник за възражения", v: 350, from: 1 },
+  { g: "Селс система", n: "Follow-up скриптове", v: 250, from: 1 },
+  { g: "Селс система", n: "SOP-ове", v: 600, from: 1 },
+  { g: "Селс система", n: "KPI и отчети", v: 400, from: 1 },
+  { g: "Селс система", n: "Система за лидовете", v: 450, from: 2 },
+  { g: "Екип и обучение", n: "Обучение 4 седмици", v: 1000, from: 2 },
+  { g: "Екип и обучение", n: "Наемане на клоузър", v: 350, from: 2 },
+  { g: "Автоматизации", n: "Отговор на лид до минути", v: 290, from: 1 },
+  { g: "Автоматизации", n: "Напомняния за разговора", v: 250, from: 1 },
+  { g: "Автоматизации", n: "Автоматичен follow-up", v: 250, from: 2 },
+  { g: "Автоматизации", n: "Табло с KPI", v: 390, from: 2 },
+  { g: "Автоматизации", n: "CRM за лидовете", v: 390, from: 2 },
+  { g: "Автоматизации", n: "Реактивиране на стари лидове", v: 290, from: 2 },
+  { g: "Автоматизации", n: "Напомняне за вноски", v: 250, from: 2 },
+  { g: "Автоматизации", n: "Onboarding на клиентите", v: 290, from: 3 },
+  { g: "Автоматизации", n: "Комисионни на екипа", v: 290, from: 3 },
+];
+// Подаръци: срещата и поддръжката са на месец × prepaid; месеците не се показват на клиента.
+const GIFTS = [
+  { n: "Sales Master Doc", v: () => 250 },
+  { n: "Седмична среща с екипа", v: (o) => 200 * o.prepaid },
+  { n: "Поддръжка", v: (o) => 149 * o.prepaid },
+];
+const OFFERS = [
+  { id: 1, roman: "I", name: "Старт", price: 790, prepaid: 1, promise: "Основата: всичко, което екипът казва и прави, е написано.",
+    key: ["Скриптове за сетинг и клоузинг", "SOP-ове, KPI и отчети", "Отговор на лид до минути"] },
+  { id: 2, roman: "II", name: "Про", price: 1390, prepaid: 3, rec: true, promise: "Намираме клоузър, обучаваме екипа и всеки лид е под контрол.",
+    key: ["Наемане и обучение на клоузър", "Система за лидовете и CRM", "Табло, follow-up, стари лидове"] },
+  { id: 3, roman: "III", name: "Всичко", price: 1990, prepaid: 6, promise: "Целият път на клиента, с най-дългата поддръжка.",
+    key: ["Всичко от каталога", "Onboarding и комисионни", "Най-дългата поддръжка"] },
+];
+const GROUPS = ["Селс система", "Екип и обучение", "Автоматизации"];
+// Пътят на клиента (слайд 2): кое нещо на коя стъпка работи.
+const FLOW = [
+  { h: "Лидът пише", items: ["Отговор до минути", "Система за лидовете", "CRM"] },
+  { h: "Сетърът записва", items: ["Скрипт за сетинг", "Напомняния за разговора", "Реактивиране на стари лидове"] },
+  { h: "Клоузърът продава", items: ["Скрипт за клоузинг", "Наръчник за възражения", "Follow-up скриптове и автоматичен"] },
+  { h: "Клиентът плаща", items: ["Напомняне за вноски", "Onboarding", "Комисионни на екипа"] },
+];
+
+const eur = (n) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " €";
+const giftsOf = (o) => GIFTS.reduce((t, g) => t + g.v(o), 0);
+const valueOf = (o) => ITEMS.filter((i) => i.from <= o.id).reduce((t, i) => t + i.v, 0) + giftsOf(o);
+
+const SLIDES = [{ k: "cover" }, { k: "sys" }, ...OFFERS.map((o) => ({ k: "offer", o })), { k: "choose" }, { k: "start" }];
+let si = 0, sub = 1;
+
+const cover = () => `<section class="slide cover">
+  <div class="kicker up">Предложение за селс система</div>
+  <h1 class="up d1">Габриела<em>Великова</em></h1>
+  <div class="rule up d2"></div>
+  <div class="meta up d3">
+    <div><b>${ITEMS.length + GIFTS.length} неща</b>които изграждаме</div>
+    <div><b>3 варианта</b>от които избираш</div>
+    <div><b>Стоян Маркачев</b>Ergon · селс и автоматизации</div>
+  </div>
+</section>`;
+
+const sys = () => `<section class="slide sys">
+  <div class="kicker up">Системата</div>
+  <h2 class="up d1">Всяка стъпка от пътя на клиента има <em>скрипт и автоматизация</em></h2>
+  <div class="flow">${FLOW.map((f, i) => `<div class="stage up d${i + 2}"><div class="n">стъпка ${i + 1}</div><h3>${f.h}</h3><ul>${f.items.map((x) => `<li>${x}</li>`).join("")}</ul></div>`).join("")}</div>
+  <div class="base up d5"><b>Отдолу държи всичко:</b><span>SOP-ове</span><span>KPI и табло</span><span>обучение на екипа</span><span>Sales Master Doc</span><span>седмична среща</span></div>
+</section>`;
+
+function offer(o) {
+  const v = sub >= 2, p = sub >= 3;
+  const li = (i) => `<li class="${i.from < o.id ? "old" : ""}"><span class="t">${i.n}</span>${v ? `<span class="v up">${eur(i.v)}</span>` : ""}</li>`;
+  const groups = GROUPS.map((g, gi) => {
+    const list = ITEMS.filter((i) => i.g === g && i.from <= o.id);
+    return `<div class="grp up d${gi + 2}"><h4><span>${g}</span><span>${list.length}</span></h4><ul>${list.map(li).join("")}</ul></div>`;
+  }).join("");
+  let price = `<div class="hint">Стойността и цената са на следващите стъпки.</div>`;
+  if (v) price = `<div class="row up was"><span>Ако го поръчаш поотделно</span><b>${eur(valueOf(o))}</b></div>
+    <div class="row up d1"><span>от тях подаръци</span><b>${eur(giftsOf(o))}</b></div>` + (p ? "" : `<div class="hint">Цената е на следващата стъпка.</div>`);
+  if (p) price += `<div class="amount up d2" data-to="${o.price}">${eur(o.price)}<small>веднъж</small></div>
+    <div class="row up d3"><span>или 2 вноски по</span><b>${eur(o.price / 2)}</b></div>
+    <div class="save up d4">Спестяваш ${eur(valueOf(o) - o.price)}</div>`;
+  return `<section class="slide">
+    <div class="offer">
+      <div>
+        <div class="numeral up">${o.roman}</div>
+        <h2 class="up d1">${o.name}${o.rec ? `<span class="rec">Препоръчваме</span>` : ""}</h2>
+        <p class="promise up d2">${o.promise}</p>
+        <div class="price">${price}</div>
+      </div>
+      <div class="index">${groups}
+        <div class="grp gift up d5"><h4><span>Подарък от нас</span></h4><ul>${GIFTS.map((g) => `<li><span class="t">${g.n}</span>${v ? `<span class="v up">${eur(g.v(o))}</span>` : ""}</li>`).join("")}</ul></div>
+      </div>
+    </div>
+  </section>`;
+}
+
+const choose = () => `<section class="slide choose">
+  <div class="kicker up">Твоят избор</div>
+  <h2 class="up d1">Кой вариант ти звучи <em>най-близо?</em></h2>
+  <div class="cards">${OFFERS.map((o, i) => `<button class="card up d${i + 2} ${o.rec ? "r" : ""}" data-go="${i + 2}">
+    <span class="s">${o.rec ? "Препоръчваме" : "Вариант " + o.roman}</span>
+    <h3>${o.name}</h3>
+    <div class="p">${eur(o.price)}</div>
+    <span class="s">или 2 × ${eur(o.price / 2)}</span>
+    <ul>${o.key.map((k) => `<li>${k}</li>`).join("")}</ul>
+  </button>`).join("")}</div>
+  <div class="terms up d5"><span><b>2 вноски:</b> половината при старт, половината след 30 дни</span><span><b>Поддръжка след това:</b> 149 € на месец, по желание</span></div>
+</section>`;
+
+const start = () => `<section class="slide start">
+  <div class="kicker up">След като избереш</div>
+  <h2 class="up d1">Как започваме</h2>
+  <div class="steps">
+    <div class="step up d2"><div class="w">Седмица 1</div><h3>Опознаваме бизнеса</h3><p>Една среща: продукт, цена, откъде идват хората. Скриптовете са с твоите думи.</p></div>
+    <div class="step up d3"><div class="w">Седмици 2–4</div><h3>Изграждаме</h3><p>Ти одобряваш всяко нещо, преди да тръгне към клиентите.</p></div>
+    <div class="step up d4"><div class="w">След това</div><h3>Следим числата</h3><p>Виждаш кой е писал, кой е записан и кой е купил.</p></div>
+  </div>
+  <div class="sign up d5"><div class="nm">Стоян Маркачев</div><div class="r">Ergon · селс и автоматизации<br>Предложението важи 14 дни</div></div>
+</section>`;
+
+function label() {
+  const s = SLIDES[si];
+  if (s.k === "cover") return "Започни";
+  if (s.k === "sys") return "Виж вариантите";
+  if (s.k === "offer") return sub === 1 ? "Покажи стойността" : sub === 2 ? "Покажи цената" : s.o.id < 3 ? "Следващ вариант" : "Сравни трите";
+  if (s.k === "choose") return "Как започваме";
+  return "Отначало";
+}
+// Цената се „преброява“ до числото при разкриване.
+function countUp() {
+  const el = document.querySelector(".amount[data-to]");
+  if (!el || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const to = +el.dataset.to, small = el.querySelector("small").outerHTML, t0 = performance.now();
+  const tick = (t) => { const k = Math.min(1, (t - t0) / 900), e = 1 - Math.pow(1 - k, 3); el.innerHTML = eur(Math.round(to * e / 10) * 10) + small; if (k < 1) requestAnimationFrame(tick); else el.innerHTML = eur(to) + small; };
+  requestAnimationFrame(tick);
+}
+function render() {
+  const s = SLIDES[si];
+  document.getElementById("stage").innerHTML = ({ cover, sys, choose, start })[s.k]?.() ?? offer(s.o);
+  const steps = SLIDES.length + OFFERS.length * 2, done = si + SLIDES.slice(0, si).filter((x) => x.k === "offer").length * 2 + (s.k === "offer" ? sub - 1 : 0);
+  document.getElementById("prog").style.width = ((done + 1) / steps * 100) + "%";
+  document.getElementById("count").innerHTML = `<b>${String(si + 1).padStart(2, "0")}</b> / ${String(SLIDES.length).padStart(2, "0")}`;
+  document.getElementById("next").textContent = label();
+  document.getElementById("back").disabled = si === 0;
+  document.querySelectorAll("[data-go]").forEach((el) => (el.onclick = () => go(+el.dataset.go, 3)));
+  if (s.k === "offer" && sub === 3) countUp();
+}
+function go(i, s = 1) { si = Math.max(0, Math.min(SLIDES.length - 1, i)); sub = s; window.scrollTo(0, 0); render(); }
+function next() { if (SLIDES[si].k === "offer" && sub < 3) { sub++; render(); return; } go(si === SLIDES.length - 1 ? 0 : si + 1); }
+function back() { if (SLIDES[si].k === "offer" && sub > 1) { sub--; render(); return; } if (si > 0) go(si - 1, SLIDES[si - 1].k === "offer" ? 3 : 1); }
+document.getElementById("next").onclick = next;
+document.getElementById("back").onclick = back;
+document.addEventListener("keydown", (e) => { if (e.key === "ArrowRight" || e.key === " ") { e.preventDefault(); next(); } if (e.key === "ArrowLeft") back(); });
+// Плъзгане с пръст на телефона.
+let tx = null;
+document.addEventListener("touchstart", (e) => { tx = e.touches[0].clientX; }, { passive: true });
+document.addEventListener("touchend", (e) => { if (tx === null) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 70) dx < 0 ? next() : back(); tx = null; });
+render();
+</script>
+
+</html>
