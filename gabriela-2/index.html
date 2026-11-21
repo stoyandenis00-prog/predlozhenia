@@ -59,9 +59,9 @@ h1, h2, h3 { font-family: var(--display); font-weight: 400; margin: 0; text-wrap
 .cover .r .eyebrow { color: var(--ondim); }
 .tiers { display: grid; gap: 0; }
 .tier { display: grid; grid-template-columns: 46px 1fr; gap: 6px 10px; padding: 18px 0; border-top: 1px solid var(--green2); }
-.tier .rn { font: 400 22px var(--display); color: var(--ondim); }
+.tier .rn { font: 400 22px var(--display); color: var(--ondim); grid-row: span 2; }
 .tier b { font: 400 28px/1 var(--display); letter-spacing: .04em; text-transform: uppercase; }
-.tier span { grid-column: 2; font-size: 13.5px; color: var(--ondim); }
+.tier .sh { grid-column: 2; font-size: 13.5px; color: var(--ondim); }
 .cover .r small { font-size: 13px; color: var(--ondim); }
 
 /* Как работи */
@@ -247,7 +247,7 @@ const cover = () => `<section class="slide cover">
   </div>
   <div class="r up d2">
     <div class="eyebrow">Вариантите</div>
-    <div class="tiers">${OFFERS.map((o) => `<div class="tier"><span class="rn">${o.roman}</span><b>${o.name}</b><span>${o.short}</span></div>`).join("")}</div>
+    <div class="tiers">${OFFERS.map((o) => `<div class="tier"><span class="rn">${o.roman}</span><b>${o.name}</b><span class="sh">${o.short}</span></div>`).join("")}</div>
     <small>Ergon · селс и автоматизации</small>
   </div>
 </section>`;
